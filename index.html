@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251d">
+  <meta name="description" content="Conheça os personagens de Apenas um Show em um catálogo interativo com busca e favoritos.">
+  <title>Apenas um Show | Arquivo do Parque</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#catalogo">Pular para o catálogo</a>
+
+  <header class="topo">
+    <nav class="navegacao limite" aria-label="Navegação principal">
+      <a class="marca" href="#inicio" aria-label="Apenas um Show, início">
+        <span class="marca-selo" aria-hidden="true">A</span>
+        <span>ARQUIVO <strong>DO PARQUE</strong></span>
+      </a>
+      <div class="links-navegacao">
+        <a href="#catalogo">Personagens</a>
+        <a href="#sobre">Sobre a série</a>
+      </div>
+      <a class="link-fonte" href="https://raw.githubusercontent.com/oguzhan18/regularshow-api/main/src/data/characters.json" target="_blank" rel="noreferrer">
+        API do projeto <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto limite">
+        <p class="sobretitulo"><span class="ponto-verde"></span> UM DIA NORMAL NO PARQUE</p>
+        <h1>O expediente<br>nunca foi <span>normal.</span></h1>
+        <p class="hero-descricao">Relembre quem transforma qualquer tarefa simples em uma aventura completamente fora de controle.</p>
+        <div class="hero-acoes">
+          <a class="botao botao-destaque" href="#catalogo">Conhecer personagens <span aria-hidden="true">↓</span></a>
+          <button class="botao botao-contorno" id="surpresa-btn" type="button">Surpresa do parque <span aria-hidden="true">✳</span></button>
+        </div>
+        <div class="hero-indice">
+          <span class="indice-numero" id="total-personagens">—</span>
+          <span>personagens<br>no arquivo</span>
+        </div>
+      </div>
+      <div class="hero-ilustracao" aria-hidden="true">
+        <div class="sol"></div>
+        <div class="arvore arvore-um"><span></span></div>
+        <div class="arvore arvore-dois"><span></span></div>
+        <div class="gramado"></div>
+        <div class="placa"><span>PARQUE</span><strong>DO OESTE</strong><small>FUNCIONÁRIOS DO MÊS</small></div>
+        <div class="selo-hero">DESDE<br><strong>2010</strong></div>
+      </div>
+      <div class="hero-rodape limite">
+        <span>REGULAR SHOW · DESENHO ANIMADO</span>
+        <span>ROLE PARA EXPLORAR <span aria-hidden="true">↓</span></span>
+      </div>
+    </section>
+
+    <section class="catalogo secao limite" id="catalogo" aria-labelledby="titulo-catalogo">
+      <div class="cabecalho-secao">
+        <div>
+          <p class="sobretitulo sobretitulo-escuro">O PESSOAL DO PARQUE</p>
+          <h2 id="titulo-catalogo">Arquivo de personagens<span>.</span></h2>
+          <p class="texto-secao">Do funcionário exemplar ao causador de problemas. Todo mundo tem uma ficha por aqui.</p>
+        </div>
+        <div class="contador" aria-live="polite">
+          <strong id="contador-resultados">Carregando...</strong>
+          <span>resultados</span>
+        </div>
+      </div>
+
+      <div class="ferramentas" role="search">
+        <label class="busca">
+          <span class="icone-busca" aria-hidden="true"></span>
+          <span class="visualmente-oculto">Buscar personagem</span>
+          <input id="campo-busca" type="search" placeholder="Buscar por nome, espécie ou ocupação..." autocomplete="off">
+          <kbd>⌕</kbd>
+        </label>
+        <label class="ordenacao">
+          <span class="visualmente-oculto">Ordenar personagens</span>
+          <select id="ordenacao">
+            <option value="az">Nome: A a Z</option>
+            <option value="za">Nome: Z a A</option>
+          </select>
+        </label>
+        <button class="botao-filtro" id="favoritos-btn" type="button" aria-pressed="false">
+          <span aria-hidden="true">♡</span> Favoritos
+        </button>
+        <button class="botao-limpar" id="limpar-btn" type="button">Limpar filtros</button>
+      </div>
+
+      <p class="aviso-fonte" id="aviso-fonte" role="status" aria-live="polite"></p>
+      <div class="grade-personagens" id="cards-container" aria-live="polite"></div>
+      <div class="estado-vazio" id="estado-vazio" hidden>
+        <span aria-hidden="true">☁</span>
+        <h3>Nenhum personagem por aqui.</h3>
+        <p>Tente outro nome ou limpe os filtros para ver o arquivo completo.</p>
+        <button class="botao botao-destaque" id="limpar-vazio-btn" type="button">Ver todo mundo</button>
+      </div>
+      <div class="mais-resultados">
+        <button class="botao botao-carregar" id="carregar-mais-btn" type="button" hidden>
+          Carregar mais personagens <span aria-hidden="true">↓</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="sobre-conteudo limite">
+        <div class="sobre-titulo">
+          <p class="sobretitulo">SOBRE O DESENHO</p>
+          <h2 id="titulo-sobre">Um parque.<br><span>Zero rotina.</span></h2>
+        </div>
+        <div class="sobre-texto">
+          <p>Em <strong>Apenas um Show</strong>, os melhores amigos Mordecai e Rigby trabalham em um parque e fazem de tudo para escapar das tarefas. O que começa como uma tarde tranquila quase sempre termina em uma aventura surreal.</p>
+          <div class="fatos">
+            <div><strong>2010</strong><span>estreia da série</span></div>
+            <div><strong>8</strong><span>temporadas</span></div>
+            <div><strong>CN</strong><span>Cartoon Network</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo limite">
+      <a class="marca marca-rodape" href="#inicio">
+        <span class="marca-selo" aria-hidden="true">A</span>
+        <span>ARQUIVO <strong>DO PARQUE</strong></span>
+      </a>
+      <p>Projeto acadêmico de Front-End · HTML, CSS e JavaScript</p>
+      <a href="https://github.com/oguzhan18/regularshow-api" target="_blank" rel="noreferrer">Fonte dos dados <span aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+</body>
+</html>
