@@ -2,7 +2,13 @@
 
 Catálogo responsivo de personagens de **Apenas um Show**, feito com HTML, CSS e JavaScript puro. Os cards são criados pelo JavaScript a partir dos dados recebidos com `fetch`.
 
-## Como executar
+## Acesse o site
+
+O site está publicado no GitHub Pages e pode ser aberto em computadores ou celulares com acesso à internet: [Abrir Arquivo do Parque](https://carlosedoardoo.github.io/Atividade-front-end/).
+
+O catálogo completo depende da disponibilidade da API externa. Se ela estiver indisponível, uma seleção local mantém a interface utilizável.
+
+## Como executar localmente
 
 Abra esta pasta no VS Code e inicie o **Live Server** pelo arquivo `index.html`. Se preferir, abra um terminal nesta pasta e rode:
 
